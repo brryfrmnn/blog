@@ -3,6 +3,15 @@
 	Creating POST
 @stop
 @section('content')
+    <!--<script src="{{URL::asset('assets/js/tinymce/tinymce.min.js')}}"></script>
+    <script type="text/javascript">
+      tinymce.init({
+        selector : "textarea",
+        plugins : ["advlist autolink lists link image charmap print preview anchor", "searchreplace visualblocks code fullscreen", "insertdatetime media table contextmenu paste jbimages"],
+        toolbar : "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image jbimages",
+    });
+    </script>-->
+
 	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 		<div class="panel panel-info">
             <div class="panel-body">
@@ -40,3 +49,20 @@
         </div>
 	</div>
 @stop
+@push('scripts')
+    <script src="{{URL::asset('/vendor/unisharp/laravel-ckeditor/ckeditor.js')}}"></script>
+    <script src="{{URL::asset('/vendor/unisharp/laravel-ckeditor/adapters/jquery.js')}}"></script>
+    <script>
+      $('textarea').ckeditor({
+       filebrowserImageBrowseUrl: 'http://localhost/blog/public/laravel-filemanager?type=Images',
+    filebrowserImageUploadUrl: 'http://localhost/blog/public/laravel-filemanager/upload?type=Images&_token={{csrf_token()}}',
+    filebrowserBrowseUrl: 'http://localhost/blog/public/laravel-filemanager?type=Files',
+    filebrowserUploadUrl: 'http://localhost/blog/public/laravel-filemanager/upload?type=Files&_token={{csrf_token()}}'
+      });
+    </script>
+    <!--<script>
+        $('textarea').ckeditor();
+        // $('.textarea').ckeditor(); // if class is prefered.
+    </script>-->
+    <script src="{{URL::asset('assets/js/tinymce/jquery.tinymce.min.js')}}"></script>
+@endpush

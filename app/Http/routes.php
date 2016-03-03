@@ -11,7 +11,7 @@
 |
 */
 
-
+	
    Route::get('/', ['as' => 'home', 'uses' => 'PostController@index'] ); 
   
    Route::resource('post', 'PostController');
