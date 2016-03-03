@@ -21,7 +21,7 @@
                         </div>
                     @endif
                     <h3><a href="post/{{$post->id}}" title="">{{str_limit($post->title,20)}}</a></h3><br>
-                    <p>{{str_limit($post->content,400)}} <a href="post/{{$post->id}}" title="">Read more</a></p>
+                    <p>{!!str_limit($post->content,400)!!} <a href="post/{{$post->id}}" title="">Read more</a></p>
                 </div>
             </div>        
         </div>

@@ -10,7 +10,7 @@
                 <h1>{{$post->title}}</h1>
                 <br>
                 <p>
-                  {{$post->content}} <strong>{{$post->user->username}}</strong>
+                  {!!$post->content!!} <strong>{{$post->user->username}}</strong>
                 </p>
 
 
